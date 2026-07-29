@@ -1,0 +1,85 @@
+/* =========================================================
+   committees.css — styles unique to committees.html
+   Light theme, same fixed photo background as every other
+   page (no dark overlay). Each committee gets its own card
+   with a color accent, an icon, and role "chips" instead of
+   plain bullet points.
+   ========================================================= */
+
+.committees-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:24px;
+  margin-top:36px;
+}
+
+.committee-card{
+  background:rgba(255,255,255,0.8);
+  border-radius:22px;
+  padding:28px 26px;
+  box-shadow:0 12px 26px -14px rgba(40,60,90,0.28);
+  border-top:5px solid var(--accent, var(--blue-deep));
+  transition:transform .18s ease, box-shadow .18s ease;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.committee-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 32px -14px rgba(40,60,90,0.34);
+}
+
+.committee-card .icon-circle{
+  width:52px; height:52px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:1.4rem;
+  background:var(--accent, var(--blue-deep));
+  box-shadow:0 6px 14px -6px rgba(40,60,90,0.35);
+}
+
+.committee-card h2{
+  margin:0;
+  font-size:1.15rem;
+  color:var(--ink);
+}
+
+.committee-card p{
+  margin:0;
+  font-size:0.9rem;
+  line-height:1.6;
+  color:#4a5568;
+}
+
+.role-chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:auto;
+  padding-top:4px;
+}
+.role-chips span{
+  background:color-mix(in srgb, var(--accent, var(--blue-deep)) 16%, white);
+  color:var(--accent-text, var(--ink));
+  border:1px solid color-mix(in srgb, var(--accent, var(--blue-deep)) 35%, white);
+  border-radius:var(--radius-pill);
+  padding:6px 14px;
+  font-size:0.78rem;
+  font-weight:700;
+}
+
+/* per-committee accent colors, echoing the palette used across
+   the rest of the site (nav pills, panels) so this page still
+   feels part of the same family */
+.committee-card.logistics{ --accent:#6f8fc4; }
+.committee-card.events{ --accent:#e0a638; }
+.committee-card.creatives{ --accent:#c9748f; }
+.committee-card.publications{ --accent:#7f9a86; }
+.committee-card.media{ --accent:#5b8fe0; }
+
+@media (max-width:640px){
+  .committees-grid{ grid-template-columns:1fr; }
+  .committee-card{ padding:24px 20px; }
+}

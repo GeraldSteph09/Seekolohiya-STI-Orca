@@ -1,0 +1,41 @@
+/* =========================================================
+   social.css — styles unique to social.html
+   ========================================================= */
+
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+  gap:22px;
+  margin-top:34px;
+}
+
+.social-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+  color:var(--ink);
+  background:rgba(255,255,255,0.8);
+  border-radius:20px;
+  padding:32px 24px;
+  box-shadow:0 12px 26px -14px rgba(40,60,90,0.28);
+  transition:transform .16s ease, box-shadow .16s ease;
+}
+.social-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 32px -14px rgba(40,60,90,0.34);
+}
+.social-card .icon-circle{
+  width:64px; height:64px;
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:#fff;
+}
+.social-card .icon-circle svg{ width:30px; height:30px; }
+.social-card.facebook .icon-circle{ background:#3b5998; }
+.social-card.instagram .icon-circle{ background:radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); }
+.social-card.gmail .icon-circle{ background:#EA4335; }
+
+.social-card h2{ margin:0; font-size:1.1rem; }
+.social-card span{ font-size:0.82rem; color:#667; text-align:center; }

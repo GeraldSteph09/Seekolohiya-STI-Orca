@@ -1,0 +1,32 @@
+/* =========================================================
+   about.css — styles unique to about.html
+   ========================================================= */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:36px;
+  margin-top:34px;
+  align-items:start;
+}
+
+.about-card{
+  background:rgba(255,255,255,0.78);
+  border-radius:20px;
+  padding:26px 28px;
+  box-shadow:0 12px 26px -14px rgba(40,60,90,0.28);
+  margin-bottom:22px;
+}
+.about-card h2{
+  margin-top:0;
+  font-size:1.3rem;
+  color:var(--blue-deep);
+}
+.about-card p{ line-height:1.7; color:#445; margin-bottom:0; }
+
+/* where the group photo for the About page goes */
+.about-photo .photo-slot{ aspect-ratio:1/1; }
+
+@media (max-width:800px){
+  .about-grid{ grid-template-columns:1fr; }
+}

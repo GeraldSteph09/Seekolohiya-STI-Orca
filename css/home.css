@@ -1,0 +1,143 @@
+/* =========================================================
+   home.css — styles unique to index.html (the landing page)
+   Loaded after style.css.
+   ========================================================= */
+
+.hero{
+  position:relative;
+  padding:70px 24px 220px;
+  text-align:center;
+  overflow:hidden;
+}
+.hero-inner{ position:relative; z-index:2; }
+.hero-banner{
+  display:inline-block;
+  padding:22px 60px;
+  background:rgba(255,255,255,0.6);
+  backdrop-filter:blur(6px);
+  border-radius:18px;
+}
+.logo-text{
+  margin:0;
+  font-size:clamp(2.4rem, 6vw, 4.2rem);
+  font-weight:800;
+  letter-spacing:6px;
+  line-height:1;
+}
+.logo-text .seek{
+  background:linear-gradient(180deg,#f6c453,#e0932e);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.logo-text .olohiya{
+  background:linear-gradient(180deg,#5b8fe0,#2c5aa8);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.tagline{
+  margin:14px 0 0;
+  font-weight:700;
+  letter-spacing:5px;
+  font-size:0.85rem;
+  color:var(--ink);
+}
+.tagline span{ display:block; margin-top:2px; }
+
+/* ---------- MAIN BOARD ---------- */
+.board{
+  max-width:1300px;
+  margin:-160px auto 0;
+  padding:0 24px 90px;
+  position:relative;
+  z-index:3;
+  display:grid;
+  grid-template-columns:1.15fr 1fr 0.85fr 0.85fr;
+  gap:26px;
+  align-items:start;
+}
+
+/* sidebar nav column — home page ONLY arranges the 5 pills
+   vertically like the original mockup. Other pages use the
+   horizontal .site-nav from style.css instead. */
+.nav-col{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  padding-top:8px;
+}
+.nav-col .nav-pill{
+  justify-content:space-between;
+  padding:22px 30px;
+  font-size:1.15rem;
+  letter-spacing:2px;
+  box-shadow:0 10px 20px -8px rgba(40,60,90,0.25);
+}
+.nav-col .nav-pill:hover{ transform:translateX(6px); }
+.nav-col .nav-pill.underline{ text-decoration:underline; text-underline-offset:5px; }
+.nav-col .icon{ width:22px; height:22px; flex-shrink:0; opacity:0.9; }
+
+/* photo stack */
+.photo-col{ display:flex; flex-direction:column; gap:22px; }
+.photo-frame{
+  background:var(--blue-mid);
+  border-radius:18px;
+  padding:10px;
+  box-shadow:0 14px 30px -10px rgba(40,60,90,0.3);
+}
+.photo-frame .photo-slot{ border:none; }
+.photo-caption{
+  margin-top:8px;
+  text-align:center;
+  color:var(--white);
+  font-weight:700;
+  letter-spacing:1px;
+  font-size:0.8rem;
+  text-transform:uppercase;
+}
+
+/* booths / events panels */
+.panel{
+  border-radius:var(--radius-lg);
+  border:3px solid var(--white);
+  box-shadow:0 14px 30px -12px rgba(40,60,90,0.28);
+  min-height:400px;
+  padding:26px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.panel h2{
+  margin:0 0 6px;
+  text-align:center;
+  font-size:1.6rem;
+  letter-spacing:2px;
+  color:var(--white);
+  text-shadow:0 2px 4px rgba(0,0,0,0.15);
+}
+.panel-booths{ background:linear-gradient(180deg,#dbe1f0,#c9d1e8); }
+.panel-events{ background:linear-gradient(180deg,#a9b8b0,#94a59d); }
+.panel-item{
+  background:rgba(255,255,255,0.72);
+  border-radius:12px;
+  padding:12px 14px;
+  font-size:0.85rem;
+  font-weight:600;
+  color:var(--ink);
+}
+
+.panel-item:hover{ transform:translateY(-2px); box-shadow:0 8px 20px -6px rgba(40,60,90,0.25); }
+.panel-item small{ display:block; font-weight:500; opacity:0.75; margin-top:2px; }
+
+@media (max-width:1050px){
+  .board{ grid-template-columns:1fr 1fr; margin-top:-120px; }
+  .hero{ padding-bottom:170px; }
+}
+@media (max-width:640px){
+  .board{ grid-template-columns:1fr; margin-top:-90px; }
+  .hero{ padding:50px 16px 120px; }
+  .hero-banner{ padding:18px 22px; }
+  .tagline{ letter-spacing:2px; font-size:0.7rem; }
+  .nav-col .nav-pill{ padding:18px 22px; font-size:1rem; }
+}
+
+@media (max-width:380px){
+  .logo-text{ letter-spacing:3px; }
+}

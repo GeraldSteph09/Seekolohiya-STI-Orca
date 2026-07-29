@@ -1,0 +1,168 @@
+/* =========================================================
+   style.css
+   SHARED across every page: fonts, colors, reset, the fixed
+   watercolor background, the top nav bar, and footer.
+   Page-specific look (home.css, about.css, etc.) loads AFTER
+   this file and only adds what's unique to that page.
+   ========================================================= */
+
+:root{
+  --blue-deep:#3d6bb5;
+  --blue-mid:#7b9fd6;
+  --blue-pale:#c7d5ef;
+  --sage:#a9b8ae;
+  --sand:#e8d9b0;
+  --gold:#e0a638;
+  --ink:#2b3a4a;
+  --cream:#faf6ec;
+  --white:#ffffff;
+  --radius-lg:26px;
+  --radius-pill:50px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  font-family:'Quicksand', sans-serif;
+  color:var(--ink);
+  min-height:100vh;
+
+  /* ---- FIXED BACKGROUND ----
+     background-attachment:fixed keeps this exact background
+     in place while the page content scrolls over it, so every
+     page feels like one continuous canvas.
+     A soft white wash sits on top of the photo so text and
+     translucent cards stay readable no matter which part of
+     the artwork lands behind them. */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.28), rgba(255,255,255,0.28)),
+    url("../images/site-background.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* iOS Safari handles background-attachment:fixed poorly (it can
+   jump, blur, or ignore it entirely), and fixed backgrounds are
+   also unnecessary weight on small screens. Switch to a normal
+   scrolling background below tablet width. */
+@media (max-width:800px){
+  body{ background-attachment: scroll; }
+}
+
+h1,h2,h3,.display{ font-family:'Baloo 2', sans-serif; }
+
+a{ color:inherit; }
+
+img{ max-width:100%; display:block; }
+
+/* ---------- TOP NAV (about / members / committees / social / application) ---------- */
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:14px;
+  padding:18px 28px;
+  background:rgba(255,255,255,0.72);
+  backdrop-filter:blur(8px);
+  position:sticky;
+  top:0;
+  z-index:50;
+  box-shadow:0 4px 14px -8px rgba(40,60,90,0.25);
+}
+
+.site-logo{
+  display:flex;
+  align-items:baseline;
+  gap:4px;
+  text-decoration:none;
+  font-family:'Baloo 2', sans-serif;
+  font-weight:800;
+  font-size:1.3rem;
+  letter-spacing:2px;
+}
+.site-logo .seek{ color:#e0932e; }
+.site-logo .olohiya{ color:#2c5aa8; }
+
+.site-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.nav-pill{
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 20px;
+  border-radius:var(--radius-pill);
+  font-family:'Baloo 2', sans-serif;
+  font-weight:700;
+  font-size:0.85rem;
+  letter-spacing:1px;
+  color:var(--white);
+  background:linear-gradient(135deg,#8fa9d8,#6f8fc4);
+  box-shadow:0 6px 14px -8px rgba(40,60,90,0.35);
+  transition:transform .15s ease, filter .15s ease;
+}
+.nav-pill:hover{ transform:translateY(-2px); filter:brightness(1.06); }
+.nav-pill:focus-visible{ outline:3px solid var(--gold); outline-offset:2px; }
+.nav-pill.is-active{
+  outline:2px solid var(--white);
+  box-shadow:0 0 0 3px var(--blue-deep), 0 6px 14px -8px rgba(40,60,90,0.35);
+}
+.nav-pill.sand{ background:linear-gradient(135deg,#e9d9ac,#d8bf83); color:var(--ink); }
+.nav-pill.sage{ background:linear-gradient(135deg,#b2c0b8,#8fa199); }
+
+/* generic page wrapper used by every inner page */
+.page{
+  max-width:1100px;
+  margin:0 auto;
+  padding:60px 24px 100px;
+}
+.page h1{
+  font-size:2.4rem;
+  letter-spacing:2px;
+  color:var(--blue-deep);
+  margin-top:0;
+}
+.page > p.lead{
+  font-size:1.05rem;
+  line-height:1.7;
+  color:#445;
+  max-width:70ch;
+}
+
+footer{
+  text-align:center;
+  padding:34px 24px 50px;
+  font-size:0.8rem;
+  color:#6b6b5c;
+}
+
+/* photo placeholder box re-used anywhere a picture needs to go */
+.photo-slot{
+  width:100%;
+  aspect-ratio:4/3;
+  border-radius:14px;
+  background:repeating-linear-gradient(45deg, #dfe7f4, #dfe7f4 10px, #eef2fa 10px, #eef2fa 20px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#6b7c94;
+  font-size:0.85rem;
+  font-weight:600;
+  padding:12px;
+  border:2px dashed #b7c6dd;
+}
+
+@media (max-width:640px){
+  .site-header{ flex-direction:column; align-items:flex-start; }
+  .nav-pill{ font-size:0.78rem; padding:9px 16px; }
+}

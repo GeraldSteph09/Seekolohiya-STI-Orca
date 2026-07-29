@@ -1,0 +1,46 @@
+/* =========================================================
+   application.css — styles unique to application.html
+   ========================================================= */
+.lead {
+    margin-top:15px;
+  background:rgba(255,255,255,0.8);
+  border-radius:22px;
+  padding:7px 10px;
+  text-align:center;
+  box-shadow:0 14px 30px -16px rgba(40,60,90,0.3);
+  max-width:600px;
+}
+.application-panel{
+  margin-top:34px;
+  background:rgba(255,255,255,0.8);
+  border-radius:22px;
+  padding:48px 36px;
+  text-align:center;
+  box-shadow:0 14px 30px -16px rgba(40,60,90,0.3);
+  max-width:600px;
+}
+
+.application-panel p{
+  color:#445;
+  line-height:1.7;
+  margin-bottom:28px;
+}
+
+.form-button{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:16px 38px;
+  border-radius:var(--radius-pill);
+  background:linear-gradient(135deg,var(--blue-mid),var(--blue-deep));
+  color:#fff;
+  text-decoration:none;
+  font-family:'Baloo 2', sans-serif;
+  font-weight:700;
+  font-size:1.05rem;
+  letter-spacing:1px;
+  box-shadow:0 10px 22px -10px rgba(40,60,90,0.4);
+  transition:transform .15s ease;
+}
+.form-button:hover{ transform:translateY(-2px); }
+.form-button svg{ width:20px; height:20px; }

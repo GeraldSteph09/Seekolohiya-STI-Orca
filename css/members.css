@@ -33,3 +33,96 @@
 
 .member-card h3{ margin:0 0 4px; font-size:1.05rem; }
 .member-card span{ font-size:0.82rem; color:#778; }
+
+/* ---------- shared section headings (Executives / Directors / Committees) ---------- */
+.section-heading{
+  font-family:'Baloo 2', sans-serif;
+  font-size:1.4rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--blue-deep);
+  margin:56px 0 4px;
+}
+.members-grid + .section-heading,
+.page > .section-heading:first-of-type{
+  margin-top:6px; /* first heading sits closer to the lead paragraph */
+}
+
+/* ---------- Directors: paired Director + Co-Director per committee ---------- */
+.directors-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center; /* centers any leftover row -> the "upside-down pyramid" look */
+  gap:22px;
+  margin-top:20px;
+}
+
+.director-pair{
+  flex:0 1 320px; /* fixed-ish width so rows wrap at 3, not stretch to fill */
+  background:rgba(255,255,255,0.55);
+  border-radius:20px;
+  padding:18px 18px 22px;
+}
+
+.director-pair .pair-label{
+  margin:0 0 12px;
+  font-family:'Baloo 2', sans-serif;
+  font-weight:700;
+  font-size:0.95rem;
+  letter-spacing:1px;
+  color:var(--blue-deep);
+  text-align:center;
+}
+
+.pair-cards{
+  display:flex;
+  gap:14px;
+}
+.pair-cards .member-card{
+  flex:1;
+  padding:16px 12px;
+  background:rgba(255,255,255,0.9);
+}
+.pair-cards .avatar{
+  width:70px; height:70px;
+}
+.pair-cards h3{ font-size:0.92rem; }
+.pair-cards span{ font-size:0.76rem; }
+
+@media (max-width:480px){
+  .pair-cards{ flex-direction:column; }
+}
+
+/* ---------- Committees: one group photo per committee ---------- */
+.committees-grid{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center; /* centers any leftover row -> the "upside-down pyramid" look */
+  gap:24px;
+  margin-top:20px;
+}
+
+.committee-card{
+  flex:0 1 300px; /* fixed-ish width so rows wrap at 3, not stretch to fill */
+  background:rgba(255,255,255,0.8);
+  border-radius:18px;
+  padding:16px;
+  text-align:center;
+  box-shadow:0 10px 22px -12px rgba(40,60,90,0.25);
+}
+
+.committee-card .committee-photo{
+  width:100%;
+  aspect-ratio:4/3;
+  border-radius:14px;
+  overflow:hidden;
+  background:linear-gradient(135deg,var(--blue-mid),var(--blue-deep));
+}
+.committee-card .committee-photo img{
+  width:100%; height:100%; object-fit:cover;
+}
+
+.committee-card h3{
+  margin:14px 0 0;
+  font-size:1.02rem;
+}

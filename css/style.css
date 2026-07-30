@@ -28,29 +28,32 @@ body{
   font-family:'Quicksand', sans-serif;
   color:var(--ink);
   min-height:100vh;
+  position:relative;
+}
 
-  /* ---- FIXED BACKGROUND ----
-     background-attachment:fixed keeps this exact background
-     in place while the page content scrolls over it, so every
-     page feels like one continuous canvas.
-     A soft white wash sits on top of the photo so text and
-     translucent cards stay readable no matter which part of
-     the artwork lands behind them. */
+/* ---- FIXED BACKGROUND ----
+   This used to be background-attachment:fixed directly on body,
+   but background-size:cover then scales against body's FULL
+   HEIGHT (the whole scrollable page), not the screen. On long
+   mobile pages that meant the image got blown up huge to cover
+   that height -> pixelated, over-stretched background.
+
+   Fix: put the background on its own position:fixed layer that's
+   pinned to the viewport (inset:0). A fixed, viewport-sized layer
+   always sizes "cover" against the SCREEN, not the document, so it
+   never stretches no matter how long the page scrolls -- and it
+   stays visually fixed in place, on mobile too. */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
   background-image:
     linear-gradient(rgba(255,255,255,0.28), rgba(255,255,255,0.28)),
     url("../images/site-background.jpg");
-  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-/* iOS Safari handles background-attachment:fixed poorly (it can
-   jump, blur, or ignore it entirely), and fixed backgrounds are
-   also unnecessary weight on small screens. Switch to a normal
-   scrolling background below tablet width. */
-@media (max-width:800px){
-  body{ background-attachment: scroll; }
 }
 
 h1,h2,h3,.display{ font-family:'Baloo 2', sans-serif; }

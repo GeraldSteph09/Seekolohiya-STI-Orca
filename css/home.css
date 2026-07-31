@@ -82,7 +82,22 @@
   padding:10px;
   box-shadow:0 14px 30px -10px rgba(40,60,90,0.3);
 }
-.photo-frame .photo-slot{ border:none; }
+.photo-frame-photo{
+  overflow:hidden;
+  border-radius:10px;
+}
+.photo-frame-photo img{
+  width:100%;
+  display:block;
+  aspect-ratio:4/3;
+  object-fit:cover;
+}
+/* the hint text needs to be visible against the blue frame,
+   not the default grey (which is meant for light backgrounds) */
+.photo-frame .photo-hint{
+  color:rgba(255,255,255,0.85);
+}
+
 .photo-caption{
   margin-top:8px;
   text-align:center;

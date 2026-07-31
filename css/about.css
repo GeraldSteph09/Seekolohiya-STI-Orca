@@ -30,3 +30,8 @@
 @media (max-width:800px){
   .about-grid{ grid-template-columns:1fr; }
 }
+
+.about-photo.group-photo{
+  border-radius:16px;
+  overflow:hidden;
+}

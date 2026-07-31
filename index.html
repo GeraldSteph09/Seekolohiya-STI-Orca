@@ -44,20 +44,26 @@
     <div class="photo-frame">
       <!-- ============================================ -->
       <!-- INSERT PHOTO HERE #1: group / event photo     -->
-      <!-- Replace the div below with:                   -->
+      <!-- Replace the img below with:                   -->
       <!-- <img src="images/photo1.jpg" alt="..."> -->
       <!-- ============================================ -->
-      <img src="images/photo1.jpg" class="photo-slot" alt="Psychology Organization">
+      <div class="photo-frame-photo group-photo" tabindex="0" role="button" aria-label="Click to view Psychology Organization photo larger">
+        <img src="images/photo1.jpg" alt="Psychology Organization">
+      </div>
       <p class="photo-caption">Psychology Organization</p>
+      <p class="photo-hint">Click to enlarge</p>
     </div>
     <div class="photo-frame">
       <!-- ============================================ -->
       <!-- INSERT PHOTO HERE #2: group / event photo     -->
-      <!-- Replace the div below with:                   -->
+      <!-- Replace the img below with:                   -->
       <!-- <img src="images/photo2.jpg" alt="..."> -->
       <!-- ============================================ -->
-      <img src="images/photo2.jpg" class="photo-slot" alt="Seekolohiya">
+      <div class="photo-frame-photo group-photo" tabindex="0" role="button" aria-label="Click to view Seekolohiya photo larger">
+        <img src="images/photo2.jpg" alt="Seekolohiya">
+      </div>
       <p class="photo-caption">Seekolohiya</p>
+      <p class="photo-hint">Click to enlarge</p>
     </div>
   </div>
 
@@ -81,5 +87,10 @@
 </footer>
 
 <script src="js/main.js"></script>
+
+<div class="lightbox" id="photoLightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
 </body>
 </html>

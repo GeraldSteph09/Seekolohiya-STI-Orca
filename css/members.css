@@ -58,7 +58,7 @@
 }
 
 .director-pair{
-  flex:0 1 320px; /* fixed-ish width so rows wrap at 3, not stretch to fill */
+  flex:0 1 330px; /* fixed-ish width so rows wrap at 3, not stretch to fill */
   background:rgba(255,255,255,0.55);
   border-radius:20px;
   padding:18px 18px 22px;
@@ -84,7 +84,7 @@
   background:rgba(255,255,255,0.9);
 }
 .pair-cards .avatar{
-  width:70px; height:70px;
+  width:96px; height:96px;
 }
 .pair-cards h3{ font-size:0.92rem; }
 .pair-cards span{ font-size:0.76rem; }
@@ -103,7 +103,7 @@
 }
 
 .committee-card{
-  flex:0 1 300px; /* fixed-ish width so rows wrap at 3, not stretch to fill */
+  flex:0 1 330px; /* fixed-ish width so rows wrap at 3, not stretch to fill */
   background:rgba(255,255,255,0.8);
   border-radius:18px;
   padding:16px;

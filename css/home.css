@@ -113,11 +113,53 @@
   border-radius:var(--radius-lg);
   border:3px solid var(--white);
   box-shadow:0 14px 30px -12px rgba(40,60,90,0.28);
-  min-height:400px;
+  height:400px;
   padding:26px 20px;
   display:flex;
   flex-direction:column;
   gap:14px;
+}
+.panel-scroll{
+  flex:1;
+  min-height:0; /* required so overflow actually works inside a flex column */
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  padding-right:4px;
+}
+.panel-scroll::-webkit-scrollbar{ width:6px; }
+.panel-scroll::-webkit-scrollbar-thumb{ background:rgba(255,255,255,0.6); border-radius:10px; }
+.panel-scroll::-webkit-scrollbar-track{ background:transparent; }
+
+.booth-photo{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.panel-photo{
+  width:100%;
+  aspect-ratio:16/10;
+  border-radius:10px;
+  overflow:hidden;
+  border:4px solid var(--blue-mid);
+  background:linear-gradient(135deg,var(--blue-mid),var(--blue-deep));
+}
+.panel-photo img{
+  width:100%; height:100%; object-fit:cover;
+}
+.panel-photo-caption{
+  margin:0;
+  font-size:0.8rem;
+  font-weight:700;
+  color:var(--ink);
+}
+.panel-photo-caption small{
+  display:block;
+  font-weight:500;
+  opacity:0.7;
+  margin-top:2px;
+  font-size:0.72rem;
 }
 .panel h2{
   margin:0 0 6px;
@@ -138,7 +180,7 @@
   color:var(--ink);
 }
 
-.panel-item:hover{ transform:translateY(-2px); box-shadow:0 8px 20px -6px rgba(40,60,90,0.25); }
+/*.panel-item:hover{ transform:translateY(-2px); box-shadow:0 8px 20px -6px rgba(40,60,90,0.25); }*/
 .panel-item small{ display:block; font-weight:500; opacity:0.75; margin-top:2px; }
 
 @media (max-width:1050px){

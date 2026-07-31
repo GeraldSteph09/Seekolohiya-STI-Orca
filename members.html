@@ -68,6 +68,15 @@
       <span>Clare Lyca Alyssa Par</span>
     </div>
   </div>
+  <div class="executive-photo-wrap">
+    <div class="executive-photo-card">
+      <div class="executive-photo group-photo" tabindex="0" role="button" aria-label="Click to view Executives group photo larger">
+        <img src="images/members/executives.jpg" alt="Executives group photo">
+        <div class="photo-slot">Executives group photo<br>(replace this div with &lt;img src="images/members/executives-group.jpg"&gt;)</div>
+      </div>
+      <p class="photo-hint">Click to enlarge</p>
+    </div>
+  </div>
 
   <!-- ===================== DIRECTORS =====================
        One Director + one Co-Director per committee, paired
@@ -167,27 +176,37 @@
   <div class="committees-grid">
 
     <div class="committee-card">
-      <div class="committee-photo"><img src="images/members/creatives.jpg" alt="Creatives committee group photo"></div>
+      <div class="committee-photo group-photo" tabindex="0" role="button" aria-label="Click to view Creatives committee group photo larger">
+        <img src="images/members/creatives.jpg" alt="Creatives committee group photo">
+      </div>
       <h3>Creatives</h3>
     </div>
 
     <div class="committee-card">
-      <div class="committee-photo"><img src="images/members/logistics.jpg" alt="Logistics committee group photo"></div>
+      <div class="committee-photo group-photo" tabindex="0" role="button" aria-label="Click to view Logistics committee group photo larger">
+        <img src="images/members/logistics.jpg" alt="Logistics committee group photo">
+      </div>
       <h3>Logistics</h3>
     </div>
 
     <div class="committee-card">
-      <div class="committee-photo"><img src="images/members/publications.jpg" alt="Publications committee group photo"></div>
+      <div class="committee-photo group-photo" tabindex="0" role="button" aria-label="Click to view Publications committee group photo larger">
+        <img src="images/members/publications.jpg" alt="Publications committee group photo">
+      </div>
       <h3>Publications</h3>
     </div>
 
     <div class="committee-card">
-      <div class="committee-photo"><img src="images/members/media.jpg" alt="Media committee group photo"></div>
+      <div class="committee-photo group-photo" tabindex="0" role="button" aria-label="Click to view Media committee group photo larger">
+        <img src="images/members/media.jpg" alt="Media committee group photo">
+      </div>
       <h3>Media</h3>
     </div>
 
     <div class="committee-card">
-      <div class="committee-photo"><img src="images/members/events.jpg" alt="Events committee group photo"></div>
+      <div class="committee-photo group-photo" tabindex="0" role="button" aria-label="Click to view Events committee group photo larger">
+        <img src="images/members/events.jpg" alt="Events committee group photo">
+      </div>
       <h3>Events</h3>
     </div>
 
@@ -199,5 +218,9 @@
 </footer>
 
 <script src="js/main.js"></script>
+<div class="lightbox" id="photoLightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
 </body>
 </html>

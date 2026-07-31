@@ -57,13 +57,9 @@
       </div>
     </div>
 
-    <div class="about-photo">
-      <!-- ============================================ -->
-      <!-- INSERT PHOTO HERE: About page group photo     -->
-      <!-- Replace the div below with:                   -->
-      <!-- <img src="images/about-photo.jpg" alt="..."> -->
-      <!-- ============================================ -->
+    <div class="about-photo group-photo" tabindex="0" role="button" aria-label="Click to view Seekolohiya Officers photo larger">
       <img src="images/about-photo.jpg" alt="Seekolohiya Officers 2025-2026">
+      <p class="photo-hint">Click to enlarge</p>
     </div>
   </div>
 </main>
@@ -73,5 +69,10 @@
 </footer>
 
 <script src="js/main.js"></script>
+
+<div class="lightbox" id="photoLightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
 </body>
 </html>

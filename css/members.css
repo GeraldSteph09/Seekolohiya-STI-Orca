@@ -126,3 +126,30 @@
   margin:14px 0 0;
   font-size:1.02rem;
 }
+
+/* ---------- Executives group photo (bigger than committee photos) ---------- */
+.executive-photo-wrap{
+  display:flex;
+  justify-content:center;
+  margin-top:22px;
+}
+.executive-photo-card{
+  width:100%;
+  max-width:460px; /* wider than committee-card's 300px basis = "slightly bigger" */
+  background:rgba(255,255,255,0.8);
+  border-radius:18px;
+  padding:16px;
+  text-align:center;
+  box-shadow:0 10px 22px -12px rgba(40,60,90,0.25);
+}
+.executive-photo-card .executive-photo{
+  width:100%;
+  aspect-ratio:4/3;
+  border-radius:14px;
+  overflow:hidden;
+  background:linear-gradient(135deg,var(--blue-mid),var(--blue-deep));
+}
+.executive-photo-card .executive-photo img{
+  width:100%; height:100%; object-fit:cover;
+}
+

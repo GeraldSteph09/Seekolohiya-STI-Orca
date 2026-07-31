@@ -43,7 +43,7 @@
   color:var(--blue-deep);
   margin:56px 0 4px;
 }
-.members-grid + .section-heading,
+/*.members-grid + .section-heading,*/
 .page > .section-heading:first-of-type{
   margin-top:6px; /* first heading sits closer to the lead paragraph */
 }

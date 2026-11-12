@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Seekolohiya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/blog.css">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<!-- data-slot = which row of the "Blogs" tab this page shows (1, 2 or 3) -->
+<body data-slot="3">
+
+<header class="site-header">
+  <div class="header-left">
+    <a class="home-icon" href="index.html" aria-label="Back to home" title="Back to home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h5v-6h4v6h5V9.5"/></svg>
+    </a>
+    <a class="site-logo" href="index.html"><span class="seek">SEEK</span><span class="olohiya">OLOHIYA</span></a>
+  </div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="nav-pill" href="about.html">About</a>
+    <a class="nav-pill sage" href="members.html">Members</a>
+    <a class="nav-pill sand" href="committees.html">Committees</a>
+    <a class="nav-pill" href="social.html">Social Media</a>
+    <a class="nav-pill sage" href="application.html">Application</a>
+  </nav>
+</header>
+
+<main class="page blog-page">
+  <div class="blog-layout">
+
+    <article class="blog-post" id="post" aria-live="polite">
+      <p class="blog-status">Loading post&hellip;</p>
+      <noscript><p class="blog-status">Please turn on JavaScript to read this post.</p></noscript>
+    </article>
+
+    <aside class="blog-side" aria-label="More posts">
+      <h2 class="side-heading">More posts</h2>
+      <div class="side-list" id="sideList"></div>
+    </aside>
+
+  </div>
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Seekolohiya — STI Ortigas-Cainta Psychology Organization
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/sheets-core.js"></script>
+<script src="js/sheet-blog.js"></script>
+
+<div class="lightbox" id="photoLightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+</body>
+</html>

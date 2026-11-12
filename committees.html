@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Committees — Seekolohiya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/committees.css">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-left">
+    <a class="home-icon" href="index.html" aria-label="Back to home" title="Back to home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20h5v-6h4v6h5V9.5"/></svg>
+    </a>
+    <a class="site-logo" href="index.html"><span class="seek">SEEK</span><span class="olohiya">OLOHIYA</span></a>
+  </div>
+  <nav class="site-nav" aria-label="Main navigation">
+    <a class="nav-pill" href="about.html">About</a>
+    <a class="nav-pill sage" href="members.html">Members</a>
+    <a class="nav-pill sand" href="committees.html">Committees</a>
+    <a class="nav-pill" href="social.html">Social Media</a>
+    <a class="nav-pill sage" href="application.html">Application</a>
+  </nav>
+</header>
+
+<main class="page">
+  <h1>Committees</h1>
+  <p class="lead" id="committeesLead" hidden></p>
+
+  <!-- Starts hidden. The Google Sheet fills it in (see js/sheet-committees.js). -->
+  <div class="committees-grid" id="committeesGrid" hidden></div>
+
+  <p class="empty-note" id="emptyNote" hidden></p>
+  <noscript><p class="empty-note">Please turn on JavaScript to see this page.</p></noscript>
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Seekolohiya — STI Ortigas-Cainta Psychology Organization
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/sheets-core.js"></script>
+<script src="js/sheets-page.js"></script>
+<script src="js/sheet-committees.js"></script>
+</body>
+</html>

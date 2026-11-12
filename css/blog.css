@@ -1,0 +1,173 @@
+/* =========================================================
+   blog.css — styles for blog1.html, blog2.html, blog3.html
+   (the background, fonts and nav come from style.css)
+   ========================================================= */
+
+/* ---------- page layout: article on the left, "More posts" on the right ---------- */
+.blog-page{ max-width:1150px; }
+
+.blog-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 320px;
+  gap:28px;
+  align-items:start;
+}
+.blog-layout.no-side{
+  grid-template-columns:minmax(0,760px);
+  justify-content:center;
+}
+
+/* ---------- the article card ---------- */
+.blog-post{
+  background:rgba(255,255,255,0.88);
+  border-radius:22px;
+  padding:34px 36px 40px;
+  box-shadow:0 12px 26px -14px rgba(40,60,90,0.28);
+  min-width:0;
+}
+.page .blog-title{
+  font-size:clamp(1.7rem, 4vw, 2.4rem);
+  line-height:1.2;
+  letter-spacing:0.5px;
+  margin:0 0 14px;
+  overflow-wrap:anywhere;
+}
+.blog-meta{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:6px 16px;
+  margin:0 0 22px;
+  font-size:0.9rem;
+  font-weight:600;
+  color:#667;
+}
+.blog-by{ display:inline-flex; align-items:center; gap:6px; }
+.blog-sep{ opacity:0.6; }
+
+.blog-hero{ margin:0 0 26px; }
+.blog-hero .group-photo{
+  border-radius:16px;
+  overflow:hidden;
+  border:3px solid var(--blue-mid);
+}
+.blog-hero img{
+  width:100%;
+  height:auto;          /* never crop: posters and quote pictures stay whole */
+  display:block;
+}
+
+/* ---------- the article text ---------- */
+.blog-body{ overflow-wrap:anywhere; }
+.blog-body p{
+  margin:0 0 1.15em;
+  font-size:1.05rem;
+  line-height:1.85;
+  color:#2f3b4a;
+}
+.blog-body .blog-subheading{
+  margin:1.7em 0 0.5em;
+  font-size:1.35rem;
+  color:var(--blue-deep);
+}
+.blog-body .blog-list{
+  margin:0 0 1.15em;
+  padding-left:1.3em;
+  font-size:1.05rem;
+  line-height:1.8;
+  color:#2f3b4a;
+}
+.blog-body .blog-list li{ margin-bottom:0.35em; }
+.blog-body a{ color:var(--blue-deep); font-weight:700; }
+
+/* messages: "not published yet", "couldn't load" */
+.blog-status{
+  margin:30px 0 14px;
+  text-align:center;
+  font-size:1.05rem;
+  font-weight:700;
+  color:#556;
+}
+.blog-back{
+  display:block;
+  width:max-content;
+  margin:0 auto 20px;
+  padding:12px 28px;
+  border-radius:var(--radius-pill);
+  background:linear-gradient(135deg,var(--blue-mid),var(--blue-deep));
+  color:#fff;
+  text-decoration:none;
+  font-family:'Baloo 2', sans-serif;
+  font-weight:700;
+  letter-spacing:1px;
+}
+
+/* ---------- "More posts" ---------- */
+.blog-side{
+  background:rgba(255,255,255,0.88);
+  border-radius:22px;
+  padding:22px 20px 24px;
+  box-shadow:0 12px 26px -14px rgba(40,60,90,0.28);
+  position:sticky;
+  top:96px;
+}
+.blog-side[hidden]{ display:none; }
+.side-heading{
+  margin:0;
+  padding-bottom:10px;
+  font-size:1.05rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--ink);
+  border-bottom:3px solid var(--blue-deep);
+}
+.side-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:16px;
+}
+.side-item{
+  display:flex;
+  align-items:stretch;
+  min-height:76px;
+  border-radius:12px;
+  overflow:hidden;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(135deg,#6f8fc4,#3d6bb5);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.side-item:hover{ transform:translateY(-2px); box-shadow:0 10px 20px -10px rgba(40,60,90,0.5); }
+.side-item:focus-visible{ outline:3px solid var(--gold); outline-offset:2px; }
+.side-thumb{
+  width:92px;
+  flex:none;
+  object-fit:cover;
+}
+.side-text{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:4px;
+  min-width:0;
+  padding:10px 12px;
+}
+.side-title{
+  font-size:0.9rem;
+  font-weight:700;
+  line-height:1.35;
+  overflow-wrap:anywhere;
+}
+.side-date{ font-size:0.75rem; opacity:0.85; }
+.side-empty{ margin:0; font-size:0.9rem; color:#667; }
+
+/* ---------- smaller screens ---------- */
+@media (max-width:900px){
+  .blog-layout{ grid-template-columns:minmax(0,1fr); }
+  .blog-side{ position:static; }
+}
+@media (max-width:640px){
+  .blog-post{ padding:24px 18px 28px; }
+  .blog-body p, .blog-body .blog-list{ font-size:1rem; }
+}

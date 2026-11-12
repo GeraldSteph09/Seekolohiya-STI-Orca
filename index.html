@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seekolohiya — STI Ortigas-Cainta Psychology Organization</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-banner">
+      <h1 class="logo-text"><span class="seek">SEEK</span><span class="olohiya">OLOHIYA</span></h1>
+      <p class="tagline">STI ORTIGAS-CAINTA<span>PSYCHOLOGY ORGANIZATION</span></p>
+    </div>
+  </div>
+</header>
+
+<main class="board">
+  <nav class="nav-col" aria-label="Main navigation">
+    <a class="nav-pill underline" href="about.html">
+      ABOUT <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+    </a>
+    <a class="nav-pill sage underline" href="members.html">
+      MEMBERS <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+    </a>
+    <a class="nav-pill sand underline" href="committees.html">
+      COMMITTEES <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#2b3a4a" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+    </a>
+    <a class="nav-pill underline" href="social.html">
+      SOCIAL MEDIA <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+    </a>
+    <a class="nav-pill sage underline" href="application.html">
+      APPLICATION <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg>
+    </a>
+    <!-- BLOG: hidden until at least one blog is open in the sheet (see js/sheet-home.js) -->
+    <a class="nav-pill sand underline" id="blogPill" href="#" hidden>
+      BLOG <svg class="icon icon-search" viewBox="0 0 24 24" fill="none" stroke="#2b3a4a" stroke-width="2"><circle cx="10" cy="10" r="7"/><line x1="21" y1="21" x2="15" y2="15"/></svg><svg class="icon icon-chevron" viewBox="0 0 24 24" fill="none" stroke="#2b3a4a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+    </a>
+    <div class="blog-menu" id="blogMenu" hidden></div>
+  </nav>
+
+  <!-- Everything below starts hidden. The Google Sheet fills it in and
+       shows it ONLY when it has data (see js/sheet-home.js). -->
+  <div class="photo-col" id="photoCol" hidden>
+    <div class="photo-frame" id="photoFrame1" hidden>
+      <div class="photo-frame-photo group-photo" tabindex="0" role="button" aria-label="Click to view photo larger"></div>
+      <p class="photo-caption" hidden></p>
+      <p class="photo-hint">Click to enlarge</p>
+    </div>
+    <div class="photo-frame" id="photoFrame2" hidden>
+      <div class="photo-frame-photo group-photo" tabindex="0" role="button" aria-label="Click to view photo larger"></div>
+      <p class="photo-caption" hidden></p>
+      <p class="photo-hint">Click to enlarge</p>
+    </div>
+  </div>
+
+  <div class="panel-col" id="boothsCol" hidden>
+    <section class="panel panel-booths" id="boothsPanel" aria-labelledby="booths-heading" hidden>
+      <h2 id="booths-heading">BOOTHS</h2>
+      <div class="panel-scroll"></div>
+    </section>
+    <figure class="panel-banner" id="boothsBanner" hidden></figure>
+  </div>
+
+  <div class="panel-col" id="eventsCol" hidden>
+    <section class="panel panel-events" id="eventsPanel" aria-labelledby="events-heading" hidden>
+      <h2 id="events-heading">EVENTS</h2>
+      <div class="panel-scroll"></div>
+    </section>
+    <figure class="panel-banner" id="eventsBanner" hidden></figure>
+  </div>
+</main>
+
+<footer>
+  &copy; <span id="year"></span> Seekolohiya — STI Ortigas-Cainta Psychology Organization
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/sheets-core.js"></script>
+<script src="js/sheets-page.js"></script>
+<script src="js/sheet-home.js"></script>
+
+<div class="lightbox" id="photoLightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="" id="lightboxImg">
+</div>
+</body>
+</html>
